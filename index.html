@@ -18,6 +18,21 @@ html,body{margin:0;padding:0;background:#f7edf3;font-family:"Tajawal","Cairo","A
 @page{size:A4 landscape;margin:0}
 @media print{.form-panel{display:none!important}.form-credit{display:none!important}html,body{background:#fff;margin:0;width:297mm;height:210mm}.stage{width:297mm;margin:0}.cert-page{box-shadow:none;margin:0;width:297mm;height:210mm;aspect-ratio:auto;padding:7mm 14mm;border:0;break-after:page;page-break-after:always}.cert-page:before{inset:7mm}.cert-page:after{inset:10.5mm}.header-band{min-height:106px;margin-top:8mm;margin-bottom:0}.title-wrap{margin-top:-22px}.title{font-size:76px}.content-area{margin-top:6px}.line{font-size:26px;line-height:1.18;margin-bottom:3px}.fill{font-size:28px}.teacher-name{font-size:34px}.workshop{font-size:33px;margin:6px auto 3px}.intro,.blessing{font-size:24px}.sig-container{bottom:13mm}.sig-img-box{height:55px}.design-credit{display:none!important}*{print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}}
 @media(max-width:800px){.form-panel{grid-template-columns:1fr}.title{font-size:52px}.line{font-size:20px;white-space:normal}.workshop{font-size:26px}.header-band{transform:scale(.86);transform-origin:top center}.sig-container{left:5%;right:5%}}
+.title-wrap{margin-top:-6px}
+.title{color:var(--rose-dark);font-family:"Amiri Diwan","Diwani Letter","Aref Ruqaa","Arabic Typesetting","Traditional Arabic","Times New Roman",serif;letter-spacing:0;line-height:.9;white-space:nowrap;text-shadow:0 2px 0 rgba(184,137,56,.18),0 0 1px rgba(97,32,68,.28),0 8px 18px rgba(97,32,68,.10)}
+.title:after{margin-top:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--rose),var(--gold),transparent)}
+.content-area{margin-top:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding-inline:34px;font-family:"Tajawal","Cairo","Noto Naskh Arabic","Traditional Arabic",Arial,sans-serif}
+.content-area:before,.content-area:after{content:"";width:min(280px,42%);height:2px;background:linear-gradient(90deg,transparent,rgba(184,137,56,.72),rgba(139,49,95,.72),rgba(184,137,56,.72),transparent);border-radius:99px}
+.content-area:before{margin-bottom:3px}.content-area:after{margin-top:5px}
+.intro{display:flex;justify-content:center;align-items:baseline;gap:8px;direction:rtl;font-size:32px;line-height:1.22;margin:0 auto 4px;color:#3d2a35;max-width:100%;white-space:nowrap}
+.line{display:flex;justify-content:center;align-items:baseline;gap:8px;font-size:33px;line-height:1.22;margin-bottom:4px;white-space:normal;flex-wrap:wrap;max-width:100%}
+.fill{display:inline-block;color:var(--rose);font:inherit;font-weight:900;border-bottom:1px solid transparent;min-width:clamp(160px,30vw,270px);max-width:min(72%,620px);padding-inline-start:0;padding-inline-end:10px;text-align:start;direction:rtl;overflow-wrap:anywhere;word-break:break-word;line-height:1.18;vertical-align:baseline}
+.intro .fill{flex:0 1 40ch;min-width:0;max-width:62%;white-space:nowrap;overflow-wrap:normal;word-break:normal}
+.teacher-name{font-size:inherit;color:var(--rose-dark);min-width:clamp(220px,38vw,420px);max-width:min(76%,720px)}
+.workshop{font-size:38px;margin:8px auto 4px;font-weight:900;color:var(--plum);line-height:1.08;font-family:"Aref Ruqaa","Traditional Arabic","Times New Roman",serif;max-width:100%;white-space:nowrap;text-shadow:0 1px 0 rgba(255,255,255,.7)}
+.blessing{font-size:32px;color:#7a4d12;font-weight:900;margin-top:4px;line-height:1.12}
+@media print{.title-wrap{margin-top:-4px}.title{font-size:76px}.content-area{margin-top:18px;gap:2px;padding-inline:10mm}.content-area:before,.content-area:after{width:78mm}.intro{font-size:32px}.intro .fill{flex-basis:128mm;max-width:128mm;white-space:nowrap;overflow-wrap:normal;word-break:normal}.line{font-size:32px;line-height:1.2;margin-bottom:3px}.fill{text-align:start;padding-inline-start:0;padding-inline-end:10px;max-width:min(72%,170mm)}.teacher-name{font-size:inherit;max-width:min(76%,185mm)}.workshop{font-size:36px;white-space:nowrap;margin-block:7px 4px}.blessing{font-size:31px}}
+@media(max-width:800px){.content-area{margin-top:18px;padding-inline:12px}.content-area:before,.content-area:after{width:56%}.intro,.line{font-size:24px}.workshop{font-size:28px;white-space:normal}.blessing{font-size:24px}}
 </style>
 </head>
 <body>
@@ -61,8 +76,8 @@ function update(){
    <div class="content-area">
      <p class="intro">تُقرُّ إدارة مدرسة / <span class="fill">${school}</span></p>
      <div class="line"><span>بأن المعلمة /</span><span class="fill teacher-name">${esc(n)}</span></div>
-     <div class="workshop">قد حضرت ورشة عمل<br>ساعة الذكاء الاصطناعي في التعليم</div>
-     <div class="line"><span>والمقامة بالمدرسة لمدة 3 ساعات بتاريخ</span><span class="fill">${date}</span></div>
+     <div class="workshop">قد حضرت ورشة عمل (ساعة الذكاء الاصطناعي في التعليم)</div>
+     <div class="line"><span>بواقع 3 ساعات والمقامة بالمدرسة بتاريخ</span><span class="fill">${date}</span></div>
      <div class="blessing">سائلين الله لها دوام التوفيق والتميّز</div>
    </div>
    <div class="sig-container">
